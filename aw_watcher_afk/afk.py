@@ -10,9 +10,8 @@ from aw_client import ActivityWatchClient
 
 from .config import load_config
 
-system = platform.system()
 
-if system == "Windows":
+if (system := platform.system()) == "Windows":
     from .windows import seconds_since_last_input
 elif system == "Darwin":
     from .macos import seconds_since_last_input
